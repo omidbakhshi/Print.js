@@ -20,6 +20,7 @@ export default {
       headerStyle: 'font-weight: 300;',
       maxWidth: 800,
       properties: null,
+      footer: null,
       gridHeaderStyle: 'font-weight: bold; padding: 5px; border: 1px solid #dddddd;',
       gridStyle: 'border: 1px solid lightgray; margin-bottom: -1px;',
       showModal: false,

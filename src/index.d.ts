@@ -10,6 +10,7 @@ declare namespace printJS {
     type?: PrintTypes;
     documentTitle?: string;
     header?: any;
+    footer?: any;
     headerStyle?: string;
     maxWidth?: number;
     targetStyle?: string | string[];
@@ -24,6 +25,7 @@ declare namespace printJS {
     frameId?: string;
     ignoreElements?: string | string[];
     repeatTableHeader?: boolean;
+    repeatTableFooter?: boolean;
     css?: string | string[];
     style?: string;
     scanStyles?: boolean;

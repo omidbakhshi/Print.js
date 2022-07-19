@@ -23,7 +23,8 @@ export default {
       return {
         field: typeof property === 'object' ? property.field : property,
         displayName: typeof property === 'object' ? property.displayName : property,
-        columnSize: typeof property === 'object' && property.columnSize ? property.columnSize + ';' : 100 / params.properties.length + '%;'
+        columnSize: typeof property === 'object' && property.columnSize ? property.columnSize + ';' : 100 / params.properties.length + '%;',
+        className: typeof property === 'object' && property.className ? property.className : ''
       }
     })
 
@@ -95,7 +96,7 @@ function jsonToHTML (params) {
       }
 
       // Add the row contents and styles
-      htmlData += '<td style="width:' + properties[n].columnSize + params.gridStyle + '">' + stringData + '</td>'
+      htmlData += '<td data-'+ properties[n].field +'="'+ stringData +'" class="'+ properties[n].field +'" style="width:' + properties[n].columnSize + params.gridStyle + '" class=" '+ properties[n].className +' ">' + stringData + '</td>'
     }
 
     // Add the row closing tag
@@ -103,7 +104,12 @@ function jsonToHTML (params) {
   }
 
   // Add the table and body closing tags
-  htmlData += '</tbody></table>'
+  htmlData += '</tbody>'
+  if(params.footer) {
+    htmlData += params.footer;
+  }
+
+  htmlData += '</table>';
 
   return htmlData
 }
