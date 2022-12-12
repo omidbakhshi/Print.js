@@ -50,7 +50,7 @@ function jsonToHTML (params) {
   const properties = params.properties
 
   // Create a html table
-  let htmlData = '<table style="border-collapse: collapse; width: 100%;">'
+  let htmlData = `<table class="${params.tableClass}" style="border-collapse: collapse; width: 100%;">`
 
   // Check if the header should be repeated
   if (params.repeatTableHeader) {
